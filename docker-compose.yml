@@ -1,0 +1,13 @@
+services:
+    nginxwebdav:
+        container_name: hls-nginx
+        build:
+            context: .
+        volumes:
+            - ./data:/data
+            - ./config:/config
+        environment:
+            - PUID=501
+            - PGID=20
+        ports:
+            - 32080:80
